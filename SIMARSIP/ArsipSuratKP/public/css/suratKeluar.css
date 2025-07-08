@@ -1,0 +1,101 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #f8f9fa;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.card .text-uppercase {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.card h5,
+.card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.btn-sm {
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-success:hover,
+.btn-outline-secondary:hover {
+    color: #fff !important;
+}
+
+.list-group-item {
+    font-size: 14px;
+    border-left: 4px solid #dee2e6;
+    padding-left: 10px;
+}
+
+.card.border-start-primary {
+    border-left: 5px solid #0d6efd !important;
+    background-color: #e9f2ff;
+}
+
+.card.border-start-success {
+    border-left: 5px solid #198754 !important;
+    background-color: #e9fbe9;
+}
+
+.card.border-start-warning {
+    border-left: 5px solid #ffc107 !important;
+    background-color: #fff8e1;
+}
+
+.card.border-start-dark {
+    border-left: 5px solid #343a40 !important;
+    background-color: #f1f1f1;
+}
+
+.wrap-column {
+    max-width: 220px;
+    white-space: normal !important;
+    word-break: break-word;
+}
+
+thead.thead-dark-center th {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.input-group-text {
+    background-color: #f1f3f5;
+    border-right: 0;
+}
+
+input.form-control-sm:focus,
+select.form-control-sm:focus {
+    box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+.alert {
+    font-size: 14px;
+}
+
+.alert i {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 6px;
+}

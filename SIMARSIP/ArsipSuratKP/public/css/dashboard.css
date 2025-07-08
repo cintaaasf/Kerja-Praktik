@@ -1,0 +1,38 @@
+.card-hover:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+
+.list-group-item:hover {
+    background-color: #f3f4f6;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Warna lembut */
+.bg-soft-blue {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.bg-soft-green {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}
+
+.bg-soft-gray {
+    background: linear-gradient(135deg, #e5e7eb, #f3f4f6);
+}
+
+/* Typography dan general tweak */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+}
+
+.card-body h4,
+.card-body h5 {
+    margin: 0;
+}
+
+.text-muted.small {
+    font-size: 0.75rem;
+}

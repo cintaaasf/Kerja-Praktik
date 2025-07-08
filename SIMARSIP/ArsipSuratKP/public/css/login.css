@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #d2b48c;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.login-title {
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 25px;
+}
+
+/* Untuk input biasa dengan ikon absolut (jika tidak pakai input-group) */
+.form-group {
+    position: relative;
+}
+
+.form-group .form-control {
+    padding-left: 2.5rem;
+}
+
+.form-group i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+/* Untuk input yang berada dalam input-group (pakai span input-group-text) */
+.input-group .form-control {
+    padding-left: 0.75rem;
+    /* kembalikan ke normal */
+}
+
+/* Fokus efek */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Tombol */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
