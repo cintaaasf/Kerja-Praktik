@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('perihal');
             $table->string('nomor_surat');
+            $table->date('tanggal_terima');
             $table->string('file_surat')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');

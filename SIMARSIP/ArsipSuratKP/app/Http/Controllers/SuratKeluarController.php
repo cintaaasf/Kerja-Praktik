@@ -30,20 +30,21 @@ class SuratKeluarController extends Controller
             'tanggal' => 'required|date',
             'perihal' => 'required|string|max:255',
             'nomor_surat' => 'nullable|string|max:255',
+            'tanggal_terima' => 'required|date',
             'file_surat' => 'nullable|file|mimes:pdf,doc,docx|max:10240',
         ], [
             'file_surat.max' => 'Ukuran file maksimal 10MB.',
-            'file_surat.mimes' => 'File harus berupa PDF.',
+            'file_surat.mimes' => 'File harus berupa PDF/doc/docx.',
         ]);
 
-        // Cek apakah nomor_berkas sudah pernah ada
+        // Cek apakah nomor_surat sudah pernah ada
         $exists = SuratKeluar::where('nomor_surat', $request->nomor_surat)->exists();
 
         if ($exists) {
             return back()->withInput()->with('error', 'Surat dengan nomor surat ini sudah ada.');
         }
 
-        // Simpan file surat jika ada
+        // Simpan file surat jika ada file surat yang mau ditambahkan
         $filePath = null;
         if ($request->hasFile('file_surat')) {
             $originalName = $request->file('file_surat')->getClientOriginalName();
@@ -57,6 +58,7 @@ class SuratKeluarController extends Controller
             'tanggal' => $request->tanggal,
             'perihal' => $request->perihal,
             'nomor_surat' => $request->nomor_surat,
+            'tanggal_terima' => $request->tanggal_terima,
             'file_surat' => $filePath,
             'user_id' => Auth::id(),
         ]);
@@ -114,6 +116,7 @@ class SuratKeluarController extends Controller
             'tanggal' => 'required|date',
             'perihal' => 'required|string|max:255',
             'nomor_surat' => 'nullable|string|max:255',
+            'tanggal_terima' => 'required|date',
             'file_surat' => 'nullable|file|mimes:pdf,doc,docx|max:10240',
         ], [
             'file_surat.max' => 'Ukuran file maksimal 10MB.',
@@ -138,6 +141,7 @@ class SuratKeluarController extends Controller
         $surat->tanggal = $request->tanggal;
         $surat->perihal = $request->perihal;
         $surat->nomor_surat = $request->nomor_surat;
+        $surat->tanggal_terima = $request->tanggal_terima;
 
         $surat->save();
 

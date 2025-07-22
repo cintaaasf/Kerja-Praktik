@@ -91,6 +91,12 @@
                                     name="nomor_surat" required>
                             </div>
                             <div class="mb-3">
+                                <label for="tanggal_terima" class="form-label fs-6">
+                                    <i class="bi bi-calendar3 me-1"></i>Tanggal Terima
+                                </label>
+                                <input type="date" class="form-control form-control-sm" id="tanggal_terima" name="tanggal_terima" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="file_surat" class="form-label fs-6">
                                     <i class="bi bi-file-earmark-arrow-up me-1"></i>Upload File (PDF)
                                 </label>
@@ -117,9 +123,13 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const tanggalInput = document.getElementById('tanggal');
-
+        const tanggalTerimaInput = document.getElementById('tanggal_terima');
         tanggalInput.addEventListener('focus', function() {
             this.showPicker?.(); // Chrome dan Edge mendukung showPicker()
         });
+        tanggalTerimaInput.addEventListener('focus', function() {
+            this.showPicker?.(); // Chrome dan Edge mendukung showPicker()
+        });
+
     });
 </script>

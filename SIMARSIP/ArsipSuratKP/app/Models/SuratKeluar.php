@@ -12,6 +12,7 @@ class SuratKeluar extends Model
         'tanggal',
         'perihal',
         'nomor_surat',
+        'tanggal_terima',
         'file_surat',
         'user_id'
     ];

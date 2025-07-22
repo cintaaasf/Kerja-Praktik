@@ -35,4 +35,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/suratKeluar', [SuratKeluarController::class, 'store'])->name('suratKeluar.store'); // Menyimpan ke database
     Route::get('/suratKeluar/{id}/edit', [SuratKeluarController::class, 'edit'])->name('suratKeluar.edit'); // Le halaman edit surat keluar
     Route::put('/suratKeluar/update/{id}', [SuratKeluarController::class, 'update'])->name('suratKeluar.update'); // Menyimpan perubahan ke database
+
+    // Kelola Pengguna
+    Route::get('/kelolaPengguna', [AuthController::class, 'createAkun'])->name('kelolaPengguna');
+    Route::get('/kelolaPengguna/create', [AuthController::class, 'formTambahAkun'])->name('kelolaPengguna.create');
+    Route::post('/kelolaPengguna/simpanAkun', [AuthController::class, 'storeAkun'])->name('kelolaPengguna.store');
+
+    Route::get('/kelolaPengguna/{id}/edit', [AuthController::class, 'editAkun'])->name('kelolaPengguna.edit');
+    Route::put('/kelolaPengguna/update/{id}', [AuthController::class, 'updateAkun'])->name('kelolaPengguna.update');
 });

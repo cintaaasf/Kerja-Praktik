@@ -66,6 +66,9 @@
                     <i class="bi bi-send"></i> Surat Keluar
                 </a>
             </div>
+            <a href="/kelolaPengguna" class="{{ request()->is('kelolaPengguna') ? 'active' : '' }}">
+                    <i class="bi bi-people-fill me-2"></i>Kelola Pengguna
+                </a>
             <a href="/logout" class="text-white mt-4 d-block text-center bg-danger px-3 mx-4 rounded">
 
                 <i class="bi bi-box-arrow-right"></i> Logout

@@ -79,6 +79,11 @@
                                     name="nomor_surat" value="{{ old('nomor_surat', $surat->nomor_surat) }}" required>
                             </div>
                             <div class="mb-3">
+                                <label for="tanggal_terima" class="form-label">Tanggal Terima</label>
+                                <input type="date" class="form-control form-control-sm" id="tanggal_terima"
+                                    name="tanggal_terima" value="{{ old('tanggal_terima', $surat->tanggal_terima) }}" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="file_surat" class="form-label">Upload File Surat (PDF)</label>
                                 @if ($surat->file_surat)
                                     <p class="mb-1">File saat ini:
@@ -109,7 +114,10 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const tanggalInput = document.getElementById('tanggal');
-
+        const tanggalTerimaInput = document.getElementById('tanggal_terima');
+        tanggalInput.addEventListener('focus', function() {
+            this.showPicker?.(); // Chrome dan Edge mendukung showPicker()
+        });
         tanggalInput.addEventListener('focus', function() {
             this.showPicker?.(); // Chrome dan Edge mendukung showPicker()
         });

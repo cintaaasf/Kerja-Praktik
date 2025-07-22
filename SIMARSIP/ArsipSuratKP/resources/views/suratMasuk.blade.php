@@ -71,9 +71,9 @@
                             <tr>
                                 <td class="text-center">{{ $suratMasuk->firstItem() + $index }}</td>
                                 <td>{{ $surat->nomor_berkas }}</td>
-                                <td>{{ $surat->pengirim }}</td>
+                                <td class="wrap-column">{{ $surat->pengirim }}</td>
                                 <td>{{ \Carbon\Carbon::parse($surat->tanggal)->format('d-m-Y') }}</td>
-                                <td>{{ $surat->nomor }}</td>
+                                <td class="text-center wrap-column">{{ $surat->nomor }}</td>
                                 <td class="wrap-column">{{ $surat->perihal }}</td>
                                 <td class="text-center wrap-column">{{ $surat->ditujukan_kepada ?? '-' }}</td>
                                 <td class="text-center">

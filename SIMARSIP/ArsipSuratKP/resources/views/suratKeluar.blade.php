@@ -61,6 +61,7 @@
                             <th>Tanggal</th>
                             <th>Perihal</th>
                             <th>Nomor Surat</th>
+                            <th>Tanggal Terima</th>
                             <th>File Surat</th>
                             <th>Aksi</th>
                         </tr>
@@ -70,10 +71,11 @@
                             <tr>
                                 <td class="text-center">{{ $suratKeluar->firstItem() + $index }}</td>
                                 <td>{{ $surat->nomor_berkas }}</td>
-                                <td>{{ $surat->penerima }}</td>
+                                <td class="wrap-column">{{ $surat->penerima }}</td>
                                 <td>{{ \Carbon\Carbon::parse($surat->tanggal)->format('d-m-Y') }}</td>
                                 <td class="wrap-column">{{ $surat->perihal }}</td>
-                                <td class="text-center">{{ $surat->nomor_surat ?? '-' }}</td>
+                                <td class="text-center wrap-column">{{ $surat->nomor_surat ?? '-' }}</td>
+                                <td>{{ \Carbon\Carbon::parse($surat->tanggal_terima)->format('d-m-Y') }}</td>
                                 <td class="text-center">
                                     @if ($surat->file_surat)
                                         <a href="{{ asset('storage/' . $surat->file_surat) }}" target="_blank"

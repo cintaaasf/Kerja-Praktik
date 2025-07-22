@@ -103,9 +103,20 @@
                 </div>
                 <ul class="list-group shadow-sm">
                     @forelse ($suratMasukTerbaru as $surat)
-                        <li class="list-group-item">
-                            <i class="bi bi-inbox-fill text-primary me-2"></i>
-                            {{ $surat->nomor }} - {{ $surat->perihal }}
+                        <li class="list-group-item d-flex align-items-start">
+                            <i class="bi bi-inbox-fill text-primary me-2 mt-2 flex-shrink-0"></i>
+
+                            <div class="flex-grow-1 d-flex flex-column" style="min-width: 0;">
+                                <div class="fw-semibold text-truncate"
+                                    style="font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%;">
+                                    {{ Str::limit($surat->nomor, 100) }}
+                                </div>
+
+                                <div class="text-muted text-truncate"
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%;">
+                                    {{ Str::limit($surat->perihal, 100) }}
+                                </div>
+                            </div>
                         </li>
                     @empty
                         <li class="list-group-item text-muted">Belum ada surat masuk</li>
@@ -119,9 +130,20 @@
                 </div>
                 <ul class="list-group shadow-sm">
                     @forelse ($suratKeluarTerbaru as $surat)
-                        <li class="list-group-item">
-                            <i class="bi bi-send-fill text-success me-2"></i>
-                            {{ $surat->nomor_surat }} - {{ $surat->perihal }}
+                        <li class="list-group-item d-flex align-items-start">
+                            <i class="bi bi-send-fill text-success me-2 mt-2 flex-shrink-0"></i>
+
+                            <div class="flex-grow-1 d-flex flex-column" style="min-width: 0;">
+                                <div class="fw-semibold text-truncate"
+                                    style="font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%;">
+                                    {{ Str::limit($surat->nomor_surat, 100) }}
+                                </div>
+
+                                <div class="text-muted text-truncate"
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%;">
+                                    {{ Str::limit($surat->perihal, 100) }}
+                                </div>
+                            </div>
                         </li>
                     @empty
                         <li class="list-group-item text-muted">Belum ada surat keluar</li>
